@@ -24,9 +24,7 @@ helpers do
 end
 
 get '/' do
-
-  @@ciphered = caesar_cipher('abcd',5)
-
+  
   if params[:string].nil?
     string = ""
     erb :index, :locals => {:string => string}
@@ -34,5 +32,5 @@ get '/' do
     @@ciphered = caesar_cipher(params[:string],params[:shift].to_i)
     erb :index, :locals => {:string => string}
   end
-  
+
 end
